@@ -1,0 +1,29 @@
+html, body{
+    margin: 0px;
+    background-color: #2F4F30;
+    color: #fff;
+}
+
+.title{
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    font-size: 25px;
+}
+
+.card{
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    left:100px;
+    margin-left: -75px;
+}
+
+#player-cards{
+    min-height: 30vh;
+}
+
+#computer-cards{
+    min-height: 30vh;
+}

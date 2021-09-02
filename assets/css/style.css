@@ -1,8 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 html, body{
+    width: 100%;
     margin: 0px;
     background-color: #2F4F30;
     color: #fff;
+    overflow: hidden;
 }
+
 
 .title{
     text-align: center;
@@ -20,10 +28,12 @@ html, body{
     margin-left: -75px;
 }
 
-#player-cards{
-    min-height: 30vh;
-}
-
+#player-cards,
 #computer-cards{
-    min-height: 30vh;
+    height: 25vh;
+}
+.player-score,
+.computer-score{
+    display: inline-block;
+    font-size: 25px;
 }

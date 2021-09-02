@@ -2,6 +2,14 @@ let deck = [];
 const types = ['C', 'D', 'H', 'S'];
 const aces = ['A', 'J', 'Q', 'K'];
 
+let playerScore = 0;
+let computerScore = 0;
+
+//HTML references
+const btnDraw = document.querySelector('#btn-draw');
+const playerScoreHTML = document.querySelector('.player-score');
+const divCardsPlayer = document.querySelector('#player-cards');
+
 //This function create a new shuffle deck 
 const createDeck = () => {
     for ( let i = 2; i <= 10; i++ ) {
@@ -25,7 +33,6 @@ const drawCard = () => {
         throw 'No more cards in deck';
     }
     const card = deck.pop();
-    console.log( card );
     
     return card;
 }
@@ -39,4 +46,23 @@ const cardValue = ( card ) => {
 }
 
 const value = cardValue(drawCard());
-console.log(value);
+
+
+//Events
+btnDraw.addEventListener( 'click', () => {
+    const card = drawCard();
+    playerScore = playerScore + cardValue(card);
+    playerScoreHTML.innerText = playerScore;
+
+    const imgCard = document.createElement('img');
+    imgCard.classList.add('card');
+    imgCard.src = `assets/cards/${card}.png`;
+    divCardsPlayer.append(imgCard);
+
+    if(playerScore > 21){
+        btnDraw.disabled = true;
+    } else if (playerScore == 21) {
+        console.warn("HAS GANAO");
+    }
+
+});

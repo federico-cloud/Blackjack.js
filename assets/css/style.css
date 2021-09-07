@@ -28,9 +28,8 @@ html, body{
     margin-left: -75px;
 }
 
-#player-cards,
-#computer-cards{
-    height: 25vh;
+.divCards{
+    height: 30vh;
 }
 .player-score,
 .computer-score{
